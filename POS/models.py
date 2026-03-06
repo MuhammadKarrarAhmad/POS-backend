@@ -5,7 +5,7 @@ from typing import Optional
 class BookingCreate(BaseModel):
     userName: str
     userEmail: EmailStr
-    userNumber: str
+    userNumber: Optional[str] = None
     bookingDate: str
     bookingTime: str
     bookingAdults: int
