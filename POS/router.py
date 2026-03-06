@@ -21,7 +21,9 @@ def create_booking(data: BookingCreate):
         "bookingTime": data.bookingTime,
         "bookingAdults": data.bookingAdults,
         "bookingChildren": data.bookingChildren,
-        "tableNumber": data.tableNumber
+        "tableNumber": data.tableNumber,
+        "occasion": data.occasion,
+        "notes": data.notes
     }
 
     bookings[booking_id] = new_booking
@@ -63,6 +65,10 @@ def update_booking(booking_id: str, data: BookingUpdate):
         booking["bookingChildren"] = data.bookingChildren
     if data.tableNumber is not None:
         booking["tableNumber"] = data.tableNumber
+    if data.notes is not None:
+        booking["notes"] = data.notes
+    if data.occasion is not None:
+        booking["occasion"] = data.occasion
 
     bookings[booking_id] = booking
     return booking

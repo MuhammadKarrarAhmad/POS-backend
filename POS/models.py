@@ -8,6 +8,8 @@ class BookingCreate(BaseModel):
     userNumber: Optional[str] = None
     bookingDate: str
     bookingTime: str
+    occasion: bool = False
+    notes: str
     bookingAdults: int
     bookingChildren: int
     tableNumber: str
@@ -19,6 +21,8 @@ class BookingUpdate(BaseModel):
     userNumber: Optional[str] = None
     bookingDate: Optional[str] = None
     bookingTime: Optional[str] = None
+    occasion: Optional[bool] = None
+    notes: Optional[str] = None
     bookingAdults: Optional[int] = None
     bookingChildren: Optional[int] = None
     tableNumber: Optional[str] = None
@@ -31,6 +35,8 @@ class BookingResponse(BaseModel):
     userNumber: str
     bookingDate: str
     bookingTime: str
+    occasion: bool
+    notes: str
     bookingAdults: int
     bookingChildren: int
     tableNumber: str
